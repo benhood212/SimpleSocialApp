@@ -1,24 +1,4 @@
-# README
+Super Basic CRUD Rails Application.
+I made it to practice using Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Users can create posts, comment on their posts and view user profile pages containing that users posts.
