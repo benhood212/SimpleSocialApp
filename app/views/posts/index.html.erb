@@ -1,7 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
+<%= link_to @user.username, profile_path(@user) %>
 
+<h1>Posts</h1>
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
