@@ -2,27 +2,35 @@
 
 <%= render @post %>
 
-<h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    <strong>Author:</strong>     
-    <% if comment.user.present? %>
-      <%= comment.user.username %>
-    <% else %>
-      Anonymous
-    <% end %><br>
-    <strong>Comment:</strong> <%= comment.content %>
-  </p>
-  <% if comment.user == current_user %>
-    <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %>
-    <%= button_to "Delete Comment", [@post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-<% end %>
+<h3>Comments</h3>
 
 <%= form_with model: [@post, @post.comments.build] do |form| %>
   <%= form.text_field :content %>
   <%= form.submit %>
 <% end %>
+
+<% @post.comments.each do |comment| %>
+  <div class="card">
+    <p>
+      <strong>    
+      <% if comment.user.present? %>
+        <%= "@" + comment.user.username %>
+      <% else %>
+        Anonymous
+      <% end %></strong> <br>
+      <strong>Comment:</strong> <%= comment.content %>
+    </p>
+
+    <div>
+      <% if comment.user == current_user %>
+        <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %>
+        <%= button_to "Delete Comment", [@post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
 
 
 <div>

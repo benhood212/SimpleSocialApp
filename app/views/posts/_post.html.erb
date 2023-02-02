@@ -1,20 +1,21 @@
 <div id="<%= dom_id post %>">
   <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
-  <p>
-    <strong>Username:</strong>
+    <strong>
     <% if post.user.present? %>
-      <%= post.user.username %>
+      <%= "@" + post.user.username %>
     <% else %>
       Anonymous
     <% end %>
+    </strong>
   </p>
+
+  <h2>
+    <%= post.title %>
+  </h2>
+
+  <p>
+    <%= post.content %>
+  </p>
+
+
 </div>
