@@ -10,7 +10,11 @@
   </p>
 
   <p>
-    <strong>User ID:</strong>
-    <%= post.user_id %>
+    <strong>Username:</strong>
+    <% if post.user.present? %>
+      <%= post.user.username %>
+    <% else %>
+      Anonymous
+    <% end %>
   </p>
 </div>
